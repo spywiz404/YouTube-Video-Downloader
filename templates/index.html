@@ -12,10 +12,20 @@
 <body>
 	  <h1 style="text-align:center;font-size:4rem; color:aliceblue;">Welcome in YouTube Video Downloader</h1>
     <section>
-        <div>     
-            <form action="/download" method="post">
-                <input type="text" name="url" placeholder="Paste Your link here">
-                <br>
+        <div>  
+            {% if lst|length == 0 %}   
+                <form action="/" method="POST">
+                    <input type="text" name="url" placeholder="Paste Your link here">
+                    <!-- <br>
+                    <select name="Choose resolution"  id="resolution" >
+                    <option value="Choose resolution">Choose resolution</option>
+                    </select> -->
+                    <input type="submit" value="Fetch resolution">
+                </form>
+            {% else %}
+            <form action="/error" method="POST">
+                <!-- <input type="text" name="url" placeholder="Paste Your link here">
+                <br> -->
                 <select name="Choose resolution"  id="resolution" >
                 <option value="Choose resolution">Choose resolution</option>
                 {% for i in lst %}
@@ -24,6 +34,7 @@
                 </select>
                 <input type="submit" value="Download">
             </form>
+            {% endif %}
         </div>
     </section>
 </body>

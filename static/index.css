@@ -19,8 +19,8 @@ form {
 }
 input[type="text"] {
     
-    height: 20px;
-    width: 400px;
+    height: 30px;
+    width: 425px;
     font-size: medium;
     display: block;
 
@@ -40,4 +40,10 @@ input[type="submit"]:hover {
     background-color: green;
     transition: background-color 1s;
     cursor: pointer;
+}
+select{
+    height: 30px;
+    width: 300px;
+    font-size: medium;
+    display: block;
 }
