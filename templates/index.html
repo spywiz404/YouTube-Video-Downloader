@@ -1,6 +1,6 @@
 <html>
 <head>
-<link rel="stylesheet" href="{{ url_for('static', filename='index.css')}}">
+<link href="../static/styles.css" rel="stylesheet"">
 <style>
     body  {
     background-image:url({{background_image}});
@@ -14,7 +14,7 @@
     <section>
         <div>  
             {% if lst|length == 0 %}   
-                <form action="/" method="POST">
+                <form action="/" method="POST" enctype="multipart/form-data">
                     <input type="text" name="url" placeholder="Paste Your link here">
                     <!-- <br>
                     <select name="Choose resolution"  id="resolution" >
@@ -23,10 +23,10 @@
                     <input type="submit" value="Fetch resolution">
                 </form>
             {% else %}
-            <form action="/error" method="POST">
+            <form action="/download" method="POST" enctype="multipart/form-data">
                 <!-- <input type="text" name="url" placeholder="Paste Your link here">
                 <br> -->
-                <select name="Choose resolution"  id="resolution" >
+                <select name="Choose_resolution"  id="resolution" >
                 <option value="Choose resolution">Choose resolution</option>
                 {% for i in lst %}
                 <option value={{i}}>{{i}}</option>
